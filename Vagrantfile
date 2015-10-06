@@ -13,6 +13,9 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "puppetlabs/centos-7.0-64-puppet"
+  config.vm.hostname = "loris"
+
+  config.vm.provision :shell, path: "loris-vagrant-install.sh"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
