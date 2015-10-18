@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+# DEPRECATED. This was a first attempt at a provisioner. Now you ought to use the ansible playbook and provisioner instead.
 
 # Install loris in a CentOS 7 box
 
