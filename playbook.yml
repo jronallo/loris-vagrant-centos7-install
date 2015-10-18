@@ -64,11 +64,14 @@
     - name: configure apache for loris
       copy: src=loris.conf dest=/etc/httpd/conf.d/loris.conf
 
-    - name: restart httpd
-      service: name=httpd state=restarted enabled=true
+    - name: ensure restart httpd
+      service: name=httpd state=restarted
+
+    - name: ensure httpd enabled
+      service: name=httpd enabled=yes
 
     - name: poke hole in firewall for apache
-      firewalld: service=http permanent=true state=enabled
+      firewalld: service=http permanent=true state=enabled immediate=yes
 
     # Now install openseadragon demo
     - name: git clone openseadragon demo
